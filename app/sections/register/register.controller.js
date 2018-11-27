@@ -7,5 +7,4 @@ angular
   function registerController() {
     var registerVM = this;
     registerVM.title = 'Registrarme (=';
-    console.log('registerVM.title', registerVM.title);
   }

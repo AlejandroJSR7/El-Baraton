@@ -7,5 +7,4 @@ angular
   function homeController() {
     var homeVM = this;
     homeVM.title = 'Hola Mundo';
-    console.log('homeVM.title', homeVM.title);
   }

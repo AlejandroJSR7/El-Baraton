@@ -7,5 +7,4 @@ angular
   function loginController() {
     var loginVM = this;
     loginVM.title = 'Acceder (=';
-    console.log('loginVM.title', loginVM.title);
   }
