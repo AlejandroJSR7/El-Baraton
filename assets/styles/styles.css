@@ -1,0 +1,20 @@
+/* >>> Fonts <<< */
+/*
+  font-family: 'Playfair Display', serif;
+*/
+
+/* >>> Header <<<*/
+header {
+  border-bottom: 1px solid #e5e5e5;
+  line-height: 1;
+}
+.header__logo {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 2.25rem;
+}
+.header__logo:hover { text-decoration: none; }
+
+header .nav-user-items { font-size: 20px; }
+header .nav-user-items .nav-item:last-child { margin-right: 10px; }
+header .nav-user-items .nav-item:not(:last-child) { margin-right: 10px; }
+header .nav-user-items a.nav-item { color: #ffffff; }
