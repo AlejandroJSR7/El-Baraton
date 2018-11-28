@@ -4,7 +4,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1"><i class="fab fa-superpowers"></i></span>
       </div>
-      <input ng-model="productsVM.search_box" type="search" class="form-control" placeholder="{{productsVM.only_availables == true ? 'Buscar unicamente en productos disponibles' : 'Buscar en todos los productos'}}" aria-label="Buscar Productos">
+      <input ng-model="productsVM.search_box" type="search" class="form-control" placeholder="{{productsVM.only_availables == true ? 'Buscar unicamente en productos disponibles' : 'Buscar en productos destacados'}}" aria-label="Buscar Producto">
       <div class="input-group-append">
         <button ng-click="productsVM.cleanSearchBox()" class="btn btn-danger" ng-disabled="!productsVM.search_box.length"><i class="fas fa-eraser"></i></button>
       </div>
@@ -12,15 +12,15 @@
         <button ng-click="productsVM.showOnlyAvailableProducts()" ng-class="{'btn-success': (productsVM.only_availables == true)}" class="btn btn-primary">
           <i class="far fa-hand-point-up"></i>
           <span ng-if="productsVM.only_availables == false">Ver disponibles</span>
-          <span ng-if="productsVM.only_availables == true">Ver todos</span>
+          <span ng-if="productsVM.only_availables == true">Ver destacados</span>
         </button>
       </div>
     </div>
   </div>
   <h5 class="col-md-12 d-flex justify-content-between">
     <div>
-      <span ng-if="!productsVM.search_box.length">Productos Destacados: </span>
-      <span ng-if="productsVM.search_box.length">Buscar "{{productsVM.search_box}}"" en todos los productos : </span>
+      <span ng-if="productsVM.only_availables == false">Productos destacados: <q ng-if="productsVM.search_box.length">{{productsVM.search_box}}</q></span>
+      <span ng-if="productsVM.only_availables == true">Productos disponibles: <q ng-if="productsVM.search_box.length">{{productsVM.search_box}}</q></span>
     </div>
     <small>
       <a href="/index.html?#!/categories">Ver todas las categorías</a>
