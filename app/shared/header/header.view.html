@@ -17,9 +17,12 @@
       </div>
       <div class="text-muted nav-item ml-1" ng-controller="CartController as cartVM">
         <i ng-click="cartVM.getProductsFromLS()" class="fab fa-opencart" id="dropdownMenuCart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuCart">
+        <div class="dropdown-menu cart-dropdown-menu" aria-labelledby="dropdownMenuCart">
           <a ng-repeat="product in cartVM.products_cart" class="dropdown-item" href="#">{{product.name}}</a>
           <div ng-if="!cartVM.products_cart.length" class="dropdown-item">Huy, no hay nada, compra alguito! =)</div>
+          <div class="dropdown-divider" ng-if="cartVM.products_cart.length"></div>
+          <a ng-if="cartVM.products_cart.length" class="dropdown-item text-center text-danger"> Vaciar Canasta </a>
+          <a ng-if="cartVM.products_cart.length" class="dropdown-item text-center text-success"> Ir a Pagar </a>
         </div>
       </div>
       <a class="nav-item text-muted" href="/index.html?#!/login"><i class="fas fa-user-astronaut"></i></a>

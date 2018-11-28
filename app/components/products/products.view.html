@@ -4,7 +4,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1"><i class="fab fa-superpowers"></i></span>
       </div>
-      <input ng-model="productsVM.search_box" type="search" class="form-control" placeholder="{{productsVM.only_availables == true ? 'Buscar unicamente en productos disponibles' : 'Buscar en productos destacados'}}" aria-label="Buscar Producto">
+      <input ng-model="productsVM.search_box" type="search" class="form-control" placeholder="{{productsVM.only_availables == true ? 'Buscar unicamente en productos disponibles' : 'Buscar en todos los productos'}}" aria-label="Buscar Producto">
       <div class="input-group-append">
         <button ng-click="productsVM.cleanSearchBox()" class="btn btn-danger" ng-disabled="!productsVM.search_box.length"><i class="far fa-times-circle"></i></button>
       </div>
