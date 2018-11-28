@@ -12,7 +12,8 @@ angular
     productsVM.search_box = '';
     productsVM.only_availables = '';
     productsVM.products_list = [];
-    productsVM.getLocalStorageInformation = getLocalStorageInformation;
+    productsVM.getLocalStorageInformationCart = getLocalStorageInformationCart;
+    productsVM.getLocalStorageInformationFavorites = getLocalStorageInformationFavorites;
     productsVM.getProducts = getProducts;
     productsVM.loadMoreProducts = loadMoreProducts;
     productsVM.showOnlyAvailableProducts = showOnlyAvailableProducts;
@@ -20,7 +21,7 @@ angular
     productsVM.addToFavorites = addToFavorites;
     productsVM.addToCart = addToCart;
     
-    function getLocalStorageInformation() {
+    function getLocalStorageInformationCart() {
       let products_on_cart_ls;
       if ( localStorageService.getCartProducts() === null ) {
         products_on_cart_ls = [];
@@ -28,6 +29,16 @@ angular
         products_on_cart_ls = localStorageService.getCartProducts();
       }
       return products_on_cart_ls;
+    }
+
+    function getLocalStorageInformationFavorites() {
+      let products_on_favorites_ls;
+      if ( localStorageService.getFavoritesProducts() === null ) {
+        products_on_favorites_ls = [];
+      } else {
+        products_on_favorites_ls = localStorageService.getFavoritesProducts();
+      }
+      return products_on_favorites_ls;
     }
 
     function getProducts() {
@@ -54,17 +65,22 @@ angular
 
     function addToFavorites($event, product) {
       $event.target.parentElement.classList.toggle('is-favorite');
+      let products_on_favorites_ls;
+      products_on_favorites_ls = productsVM.getLocalStorageInformationFavorites();
+      products_on_favorites_ls.push(product);
+      localStorageService.addProductToFavorites(products_on_favorites_ls);
     }
 
     function addToCart($event, product) {
       let products_on_cart_ls;
-      products_on_cart_ls = productsVM.getLocalStorageInformation();
+      products_on_cart_ls = productsVM.getLocalStorageInformationCart();
       products_on_cart_ls.push(product);
       localStorageService.addProductToCart(products_on_cart_ls);
     }
 
     (function init() {
       productsVM.getProducts();
-      productsVM.getLocalStorageInformation();
+      productsVM.getLocalStorageInformationFavorites();
+      productsVM.getLocalStorageInformationCart();
     })();
   }

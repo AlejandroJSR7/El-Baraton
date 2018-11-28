@@ -7,6 +7,7 @@
 /* >>> Fonts <<< */
 /*
   font-family: 'Playfair Display', serif;
+  font-family: 'Bangers', cursive;
 */
 
 /* >>> Header <<<*/
@@ -15,7 +16,8 @@ header {
   line-height: 1;
 }
 .header__logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  color: var(--brand);
+  font-family: "Bangers", "Playfair Display", Georgia, "Times New Roman", serif;
   font-size: 2.25rem;
 }
 .header__logo:hover { text-decoration: none; }

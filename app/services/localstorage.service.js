@@ -16,14 +16,22 @@ function dataService($http, $log) {
       'getToken': getToken,
       'getCartProducts': getCartProducts,
       'addProductToCart': addProductToCart,
+      'getFavoritesProducts': getFavoritesProducts,
+      'addProductToFavorites': addProductToFavorites,
       'cleanCart': cleanCart,
       'cleanFavorites': cleanFavorites,
     };
-    function getCartProducts () {
+    function getCartProducts() {
       return getToken('products_on_cart_ls');
     }
     function addProductToCart(products_on_cart_ls) {
       setLocalStorage('products_on_cart_ls', products_on_cart_ls);
+    }
+    function getFavoritesProducts() {
+      return getToken('products_on_favorites_ls');
+    }
+    function addProductToFavorites(products_on_favorites_ls) {
+      setLocalStorage('products_on_favorites_ls', products_on_favorites_ls);
     }
     function cleanCart() {
       cleanLS('products_on_cart_ls');
