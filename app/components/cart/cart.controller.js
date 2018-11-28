@@ -10,6 +10,8 @@ angular
     cartVM.products_cart = [];
     cartVM.getLocalStorageInformation = getLocalStorageInformation;
     cartVM.getProductsFromLS = getProductsFromLS;
+    cartVM.cleanLocalStorageCart = cleanLocalStorageCart;
+    cartVM.goToCartPage = goToCartPage;
     
     function getLocalStorageInformation() {
       let products_on_cart_ls;
@@ -23,6 +25,14 @@ angular
 
     function getProductsFromLS() {
       cartVM.products_cart = localStorageService.getCartProducts();
+    }
+
+    function cleanLocalStorageCart() {
+      localStorageService.cleanCart();
+    }
+
+    function goToCartPage() {
+      console.log('goToCartPage');
     }
 
     (function init() {

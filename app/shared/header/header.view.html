@@ -21,8 +21,8 @@
           <a ng-repeat="product in cartVM.products_cart" class="dropdown-item" href="#">{{product.name}}</a>
           <div ng-if="!cartVM.products_cart.length" class="dropdown-item">Huy, no hay nada, compra alguito! =)</div>
           <div class="dropdown-divider" ng-if="cartVM.products_cart.length"></div>
-          <a ng-if="cartVM.products_cart.length" class="dropdown-item text-center text-danger"> Vaciar Canasta </a>
-          <a ng-if="cartVM.products_cart.length" class="dropdown-item text-center text-success"> Ir a Pagar </a>
+          <a ng-click="cartVM.cleanLocalStorageCart()" ng-if="cartVM.products_cart.length" class="dropdown-item text-center text-danger" href="javascript:void(0)"> Vaciar Canasta </a>
+          <a ng-click="cartVM.goToCartPage()" ng-if="cartVM.products_cart.length" class="dropdown-item text-center text-success" href="javascript:void(0)"> Ir a Pagar </a>
         </div>
       </div>
       <a class="nav-item text-muted" href="/index.html?#!/login"><i class="fas fa-user-astronaut"></i></a>

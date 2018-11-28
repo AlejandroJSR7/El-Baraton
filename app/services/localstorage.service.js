@@ -15,13 +15,21 @@ function dataService($http, $log) {
     var data = {
       'getToken': getToken,
       'getCartProducts': getCartProducts,
-      'addProductToCart': addProductToCart
+      'addProductToCart': addProductToCart,
+      'cleanCart': cleanCart,
+      'cleanFavorites': cleanFavorites,
     };
     function getCartProducts () {
       return getToken('products_on_cart_ls');
     }
     function addProductToCart(products_on_cart_ls) {
       setLocalStorage('products_on_cart_ls', products_on_cart_ls);
+    }
+    function cleanCart() {
+      cleanLS('products_on_cart_ls');
+    }
+    function cleanFavorites() {
+      cleanLS('products_on_favorites_ls');
     }
 
     // Functions
@@ -34,6 +42,9 @@ function dataService($http, $log) {
     }
     function getLocalStorage(key) {
       return JSON.parse(localStorage.getItem(key));
+    }
+    function cleanLS(key) {
+      return localStorage.clear('cursos');
     }
 
     return data;
