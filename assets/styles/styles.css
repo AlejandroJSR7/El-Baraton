@@ -120,3 +120,8 @@ header .nav-user-items a.nav-item { color: #ffffff; }
   box-shadow: 0 0 10px 0 var(--brand);
   max-height: 200px;
 }
+/* >>> order-by <<< */
+.css-order-by span,
+.css-order-by .btn, {
+  margin-right: 10px;
+}

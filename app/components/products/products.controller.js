@@ -11,12 +11,14 @@ angular
     productsVM.limit_to = 6;
     productsVM.search_box = '';
     productsVM.only_availables = '';
+    productsVM.order_by = '';
     productsVM.products_list = [];
     productsVM.getLocalStorageInformationCart = getLocalStorageInformationCart;
     productsVM.getLocalStorageInformationFavorites = getLocalStorageInformationFavorites;
     productsVM.getProducts = getProducts;
     productsVM.loadMoreProducts = loadMoreProducts;
     productsVM.showOnlyAvailableProducts = showOnlyAvailableProducts;
+    productsVM.orderProductsBy = orderProductsBy;
     productsVM.cleanSearchBox = cleanSearchBox;
     productsVM.addToFavorites = addToFavorites;
     productsVM.addToCart = addToCart;
@@ -57,6 +59,14 @@ angular
         productsVM.only_availables = true;
       } else {
         productsVM.only_availables = '';
+      }
+    }
+
+    function orderProductsBy(by) {
+      if (productsVM.order_by == by) {
+        productsVM.order_by = '';
+      } else {
+        productsVM.order_by = by;
       }
     }
 
