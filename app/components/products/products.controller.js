@@ -15,6 +15,7 @@ angular
     productsVM.loadMoreProducts = loadMoreProducts;
     productsVM.showOnlyAvailableProducts = showOnlyAvailableProducts;
     productsVM.cleanSearchBox = cleanSearchBox;
+    productsVM.addToFavorites = addToFavorites;
     
     function getProducts() {
       productsService.getAllProducts().then(function(response) {
@@ -36,6 +37,10 @@ angular
 
     function cleanSearchBox() {
       productsVM.search_box = '';
+    }
+
+    function addToFavorites($event, product) {
+      $event.target.parentElement.classList.toggle('is-favorite');
     }
 
     (function init() {

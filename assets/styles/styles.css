@@ -1,4 +1,7 @@
-:root { --brand: #FF5252; }
+:root { 
+  --brand: #FF5252;
+  --brand-rgb: rgb(255,82,82, 0.5);
+}
 /* >>> Helpers <<< */
 .bg-brand { background-color: var(--brand); }
 /* >>> Fonts <<< */
@@ -76,6 +79,35 @@ header .nav-user-items a.nav-item { color: #ffffff; }
   width: 75%;
 }
 .product .card-body { max-width: 70%; }
+.product:hover .product-options {
+  opacity: 1;
+}
+.product-options {
+  align-items: center;
+  background-color: var(--white);
+  bottom: 0;
+  display: flex;
+  height: 25%;
+  justify-content: space-around;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  transition: all 0.5s ease;
+  width: 100%;
+}
+.product-options__option {}
+.product-options__option--see {}
+.product-options__option--buy {}
+.product-favorite {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+[class^="product-favorite"].is-favorite {
+  color: var(--brand);
+  text-shadow: 0px 0px 1px currentColor;
+}
 /* >>> hero <<< */
 .hero__figure { margin: 0; }
 .hero__figure img {

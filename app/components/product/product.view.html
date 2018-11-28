@@ -1,0 +1,18 @@
+<div class="product card flex-md-row mb-4 shadow-sm h-md-250">
+  <span ng-click="productsVM.addToFavorites($event, product)" class="product-favorite btn btn-link"><i class="far fa-heart"></i></span>
+  <div class="card-body d-flex flex-column align-items-start">
+    <strong class="d-inline-block mb-2 text-primary">${{product.price}}</strong>
+    <h3 class="product__title mb-0">
+      <a class="text-dark" href="#">{{product.name}}</a>
+    </h3>
+    <div class="mb-1 text-muted">Disponibilidad: {{product.quantity}}</div>
+    <p class="card-text mb-auto">{{product.description}}.</p>
+  </div>
+  <figure class="product__figure">
+    <img class="card-img-right flex-auto d-none d-lg-block" data-src="https://images.rappi.com.ar/products/{{product.img}}" alt="{{product.name}}" src="https://images.rappi.com.ar/products/{{product.img}}" data-holder-rendered="true" style="width: 200px; max-height: 200px;">
+  </figure>
+  <div class="product-options">
+    <a class="product-options__option--see text-primary" href="#">Ver Detalles</a>
+    <a class="product-options__option--buy text-success" href="#">Comprar</a>
+  </div>
+</div>
