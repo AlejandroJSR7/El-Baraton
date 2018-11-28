@@ -44,6 +44,7 @@ angular
     function getProducts() {
       productsService.getAllProducts().then(function(response) {
         productsVM.list_of_products = response;
+        console.log('productsVM.list_of_products', productsVM.list_of_products);
       });
     }
     
