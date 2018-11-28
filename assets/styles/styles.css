@@ -81,4 +81,5 @@ header .nav-user-items a.nav-item { color: #ffffff; }
 .hero__figure img {
   border-radius: 3px;
   box-shadow: 0 0 10px 0 var(--white);
+  max-height: 200px;
 }
