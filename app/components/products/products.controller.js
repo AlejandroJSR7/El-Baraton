@@ -10,6 +10,7 @@ angular
     productsVM.list_of_products = [];
     productsVM.limit_to = 6;
     productsVM.search_box = '';
+    productsVM.only_availables = '';
     productsVM.getProducts = getProducts;
     productsVM.loadMoreProducts = loadMoreProduct;
     productsVM.showOnlyAvailableProducts = showOnlyAvailableProducts;
@@ -24,7 +25,13 @@ angular
       productsVM.limit_to += 6;
     }
 
-    function showOnlyAvailableProducts() {}
+    function showOnlyAvailableProducts() {
+      if (productsVM.only_availables == '') {
+        productsVM.only_availables = true;
+      } else {
+        productsVM.only_availables = '';
+      }
+    }
 
     (function init() {
       productsVM.getProducts();
