@@ -1,77 +1,344 @@
-{ "categories": [
-	{
-		"id": 1,
-		"name": "Bebidas",
-		"sublevels": [
-			{
-				"id": 1,
-				"name": "Gaseosas",
-				"sublevels": [
-					{
-						"id": 2,
-						"name": "Con azúcar"
-					},
-					{
-						"id": 3,
-						"name": "Sin azúcar"
-					}
-				]
-			}
-		]
-	},
-	{
-		"id": 2,
-		"name": "Desayunos",
-		"sublevels": [
-			{
-				"id": 4,
-				"name": "Fake 1",
-				"sublevels": [
-					{
-						"id": 5,
-						"name": "Fake 2"
-					},
-					{
-						"id": 6,
-						"name": "Fake 3",
-						"sublevels": [
-							{
-								"id": 7,
-								"name": "Fake 4"
-							}
-						]
-					}
-				]
-			}
-		]
-	},
-	{
-		"id": 8,
-		"name": "Almuerzos",
-		"sublevels": [
-			{
-				"id": 9,
-				"name": "Fake 5"
-			},
-			{
-				"id": 10,
-				"name": "Fake 6"
-			}
-		]
-	},
-	{
-		"id": 11,
-		"name": "Vinos",
-		"sublevels": [
-			{
-				"id": 12,
-				"name": "Fake 8"
-			},
-			{
-				"id": 13,
-				"name": "Fake 9"
-			}
-		]
-	}
-]
+{
+  "categories": [
+    {
+      "id": 110,
+      "name": "Lacteos",
+      "sublevels": [
+        {
+          "id": 153,
+          "name": "Lacteos"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "name": "Bebidas Alcoholicas",
+      "sublevels": [
+        {
+          "id": 115,
+          "name": "Cervezas"
+        },
+        {
+          "id": 116,
+          "name": "Vinos"
+        },
+        {
+          "id": 117,
+          "name": "Aperitivos"
+        },
+        {
+          "id": 118,
+          "name": "Whiskys"
+        },
+        {
+          "id": 119,
+          "name": "Bebidas blancas"
+        },
+        {
+          "id": 120,
+          "name": "Champagnes"
+        },
+        {
+          "id": 121,
+          "name": "A Base de Hierbas"
+        },
+        {
+          "id": 122,
+          "name": "Generosos"
+        },
+        {
+          "id": 123,
+          "name": "Licores"
+        },
+        {
+          "id": 124,
+          "name": "Sidras"
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "name": "Bebidas",
+      "sublevels": [
+        {
+          "id": 139,
+          "name": "Aguas"
+        },
+        {
+          "id": 140,
+          "name": "Gaseosas"
+        },
+        {
+          "id": 141,
+          "name": "Isotónicas"
+        },
+        {
+          "id": 142,
+          "name": "Jugos"
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "name": "Almacén",
+      "sublevels": [
+        {
+          "id": 169,
+          "name": "Aceites y Vinagres"
+        },
+        {
+          "id": 170,
+          "name": "Aderezos"
+        },
+        {
+          "id": 171,
+          "name": "Conservas"
+        },
+        {
+          "id": 172,
+          "name": "Desayuno y Merienda"
+        },
+        {
+          "id": 173,
+          "name": "Golosinas y Chocolates"
+        },
+        {
+          "id": 174,
+          "name": "Mascotas"
+        },
+        {
+          "id": 175,
+          "name": "Panificados"
+        },
+        {
+          "id": 176,
+          "name": "Para Preparar"
+        },
+        {
+          "id": 177,
+          "name": "Pastas Secas, Arroz, Legumbres y Harinas"
+        },
+        {
+          "id": 178,
+          "name": "Sal, Pimienta y Especias"
+        },
+        {
+          "id": 179,
+          "name": "Snacks"
+        },
+        {
+          "id": 180,
+          "name": "Sopas, Caldos, Puré y Bolsas"
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "name": "Frutas y Verduras",
+      "sublevels": [
+        {
+          "id": 128,
+          "name": "Frutas y Verduras"
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "name": "Quesos y Fiambres",
+      "sublevels": [
+        {
+          "id": 114,
+          "name": "Quesos y Fiambres"
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "name": "Frescos",
+      "sublevels": [
+        {
+          "id": 125,
+          "name": "Carnes"
+        },
+        {
+          "id": 126,
+          "name": "Pastas Frescas y Tapas"
+        },
+        {
+          "id": 127,
+          "name": "Pescados y Mariscos"
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "name": "Congelados",
+      "sublevels": [
+        {
+          "id": 154,
+          "name": "Comidas Congeladas"
+        },
+        {
+          "id": 155,
+          "name": "Frutas"
+        },
+        {
+          "id": 156,
+          "name": "Hamburguesas"
+        },
+        {
+          "id": 157,
+          "name": "Helados y Postres"
+        },
+        {
+          "id": 158,
+          "name": "Papas"
+        },
+        {
+          "id": 159,
+          "name": "Pescados y Mariscos"
+        },
+        {
+          "id": 160,
+          "name": "Pollo"
+        },
+        {
+          "id": 161,
+          "name": "Vegetales"
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "name": "Especiales",
+      "sublevels": [
+        {
+          "id": 162,
+          "name": "Delikatessen"
+        },
+        {
+          "id": 163,
+          "name": "Diet y Light"
+        },
+        {
+          "id": 164,
+          "name": "Kosher"
+        },
+        {
+          "id": 165,
+          "name": "Marca Propia"
+        },
+        {
+          "id": 166,
+          "name": "Regionales"
+        },
+        {
+          "id": 167,
+          "name": "Sabores del Mundo"
+        },
+        {
+          "id": 168,
+          "name": "Vivi Saludable"
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "name": "Elaborados",
+      "sublevels": [
+        {
+          "id": 149,
+          "name": "Comidas Preparadas"
+        },
+        {
+          "id": 150,
+          "name": "Panadería"
+        },
+        {
+          "id": 151,
+          "name": "Pastas Frescas"
+        },
+        {
+          "id": 152,
+          "name": "Repostería"
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "name": "Limpieza",
+      "sublevels": [
+        {
+          "id": 129,
+          "name": "Accesorios de Limpieza"
+        },
+        {
+          "id": 130,
+          "name": "Calzado"
+        },
+        {
+          "id": 131,
+          "name": "Cuidado Para La Ropa"
+        },
+        {
+          "id": 132,
+          "name": "Desodorates de Ambiente"
+        },
+        {
+          "id": 133,
+          "name": "Insecticidas"
+        },
+        {
+          "id": 134,
+          "name": "Lavandina"
+        },
+        {
+          "id": 135,
+          "name": "Limpieza de Baño"
+        },
+        {
+          "id": 136,
+          "name": "Limpieza de Cocina"
+        },
+        {
+          "id": 137,
+          "name": "Limpieza de Pisos y Muebles"
+        },
+        {
+          "id": 138,
+          "name": "Papeles"
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "name": "Perfumería",
+      "sublevels": [
+        {
+          "id": 143,
+          "name": "Cuidado Capilar"
+        },
+        {
+          "id": 144,
+          "name": "Cuidado de la Piel"
+        },
+        {
+          "id": 145,
+          "name": "Cuidado Oral"
+        },
+        {
+          "id": 146,
+          "name": "Cuidado Personal"
+        },
+        {
+          "id": 147,
+          "name": "Farmacia"
+        },
+        {
+          "id": 148,
+          "name": "Pañales e Higiene del Bebé"
+        }
+      ]
+    }
+  ]
 }

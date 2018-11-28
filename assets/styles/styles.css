@@ -1,3 +1,6 @@
+:root { --brand: #FF5252; }
+/* >>> Helpers <<< */
+.bg-brand { background-color: var(--brand); }
 /* >>> Fonts <<< */
 /*
   font-family: 'Playfair Display', serif;
@@ -47,4 +50,35 @@ header .nav-user-items a.nav-item { color: #ffffff; }
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin-bottom: 10px;
+}
+/* >>> Categories Nav <<< */
+.categories-nav {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+/* >>> Products <<< */
+.product .product__figure {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  width: 160px;
+}
+.product .product__figure img {
+  max-width: 100%;
+}
+.product__title {
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 75%;
+}
+.product .card-body { max-width: 70%; }
+/* >>> hero <<< */
+.hero__figure { margin: 0; }
+.hero__figure img {
+  border-radius: 3px;
+  box-shadow: 0 0 10px 0 var(--white);
 }

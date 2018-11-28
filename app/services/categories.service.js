@@ -5,10 +5,11 @@
  */
 angular
     .module('elBaratonApp')
-    .constant('BASE_URL', '/app/data/categories.json')
+    .constant('BASE_URL', '/app/data/')
+    .constant('CATEGORIES_API', 'categories.json')
     .factory('CategoriesService', dataService);
 
-function dataService($http, BASE_URL, $log) {
+function dataService($http, BASE_URL, CATEGORIES_API, $log) {
     var data = {
       'getAllCategories': getAllCategories,
     };
@@ -18,7 +19,7 @@ function dataService($http, BASE_URL, $log) {
       });
     }
     function makeRequest(params) {
-      var requestUrl = BASE_URL;
+      var requestUrl = BASE_URL + CATEGORIES_API;
       if(params) {
         angular.forEach(params, function(value, key){
             requestUrl = requestUrl + '&' + key + '=' + value;
@@ -31,7 +32,7 @@ function dataService($http, BASE_URL, $log) {
               'Content-Type': 'application/json'
           },
           'cache': true
-      }).then(function(response){
+      }).then(function(response) {
           return response.data;
       }).catch(dataServiceError);
     }
