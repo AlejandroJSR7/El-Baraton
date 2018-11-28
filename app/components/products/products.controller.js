@@ -12,8 +12,9 @@ angular
     productsVM.search_box = '';
     productsVM.only_availables = '';
     productsVM.getProducts = getProducts;
-    productsVM.loadMoreProducts = loadMoreProduct;
+    productsVM.loadMoreProducts = loadMoreProducts;
     productsVM.showOnlyAvailableProducts = showOnlyAvailableProducts;
+    productsVM.cleanSearchBox = cleanSearchBox;
     
     function getProducts() {
       productsService.getAllProducts().then(function(response) {
@@ -21,7 +22,7 @@ angular
       });
     }
     
-    function loadMoreProduct() {
+    function loadMoreProducts() {
       productsVM.limit_to += 6;
     }
 
@@ -31,6 +32,10 @@ angular
       } else {
         productsVM.only_availables = '';
       }
+    }
+
+    function cleanSearchBox() {
+      productsVM.search_box = '';
     }
 
     (function init() {

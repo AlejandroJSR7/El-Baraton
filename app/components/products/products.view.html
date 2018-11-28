@@ -6,6 +6,9 @@
       </div>
       <input ng-model="productsVM.search_box" type="search" class="form-control" placeholder="Buscar Productos" aria-label="Buscar Productos">
       <div class="input-group-append">
+        <button ng-click="productsVM.cleanSearchBox()" class="btn btn-danger" ng-disabled="!productsVM.search_box.length"><i class="fas fa-eraser"></i></button>
+      </div>
+      <div class="input-group-append">
         <button ng-click="productsVM.showOnlyAvailableProducts()" ng-class="{'btn-success': (productsVM.only_availables == true)}" class="btn btn-secondary">Solo Disponibles</button>
       </div>
     </div>

@@ -1,11 +1,11 @@
 <div class="hero jumbotron p-3 p-md-5 text-white rounded bg-brand" ng-controller="HeroController as heroVM">
   <div class="row">
-    <div class="col-md-6 px-0">
+    <div class="col-md-8 px-0">
       <h1 class="display-4 font-italic">Destacado: {{heroVM.featured_product.name}}</h1>
       <p class="lead my-3">{{heroVM.featured_product.description}}.</p>
       <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Comprar</a></p>
     </div>
-    <div class="col-md-6 px-0 text-center">
+    <div class="col-md-4 px-0 text-right">
       <figure class="hero__figure">
         <img src="https://images.rappi.com.ar/products/{{heroVM.featured_product.img}}" alt="{{heroVM.featured_product.name}}">
       </figure>
