@@ -13,7 +13,6 @@ angular
     function getProducts() {
       productsService.getFeaturedProduct().then(function(response) {
         heroVM.featured_product = response;
-        console.log('heroVM.featured_product', heroVM.featured_product)
       });
     }
 

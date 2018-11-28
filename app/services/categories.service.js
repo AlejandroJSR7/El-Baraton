@@ -14,7 +14,7 @@ function dataService($http, BASE_URL, CATEGORIES_API, $log) {
       'getAllCategories': getAllCategories,
     };
     function getAllCategories() {
-      return makeRequest().then(function(data){
+      return makeRequest().then(function(data) {
         return data.categories;
       });
     }

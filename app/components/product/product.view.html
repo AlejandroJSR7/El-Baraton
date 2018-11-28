@@ -3,7 +3,7 @@
   <div class="card-body d-flex flex-column align-items-start">
     <strong class="d-inline-block mb-2 text-primary">${{product.price}}</strong>
     <h3 class="product__title mb-0">
-      <a class="text-dark" href="#">{{product.name}}</a>
+      <a class="text-dark" href="javascript:void(0);">{{product.name}}</a>
     </h3>
     <div class="mb-1 text-muted">Disponibilidad: {{product.quantity}}</div>
     <p class="card-text mb-auto">{{product.description}}.</p>
@@ -12,7 +12,7 @@
     <img class="card-img-right flex-auto d-none d-lg-block" data-src="https://images.rappi.com.ar/products/{{product.img}}" alt="{{product.name}}" src="https://images.rappi.com.ar/products/{{product.img}}" data-holder-rendered="true" style="width: 200px; max-height: 200px;">
   </figure>
   <div class="product-options">
-    <a class="product-options__option--see text-primary" href="#">Ver Detalles</a>
-    <a class="product-options__option--buy text-success" href="#">Comprar</a>
+    <button class="product-options__option--see text-primary btn btn-link">Ver Detalles</button>
+    <button ng-click="productsVM.addToCart($event, product)" class="product-options__option--buy text-success btn btn-link ">Agregar a la Compra</button>
   </div>
 </div>

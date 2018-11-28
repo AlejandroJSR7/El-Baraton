@@ -6,7 +6,7 @@
       </div>
       <input ng-model="productsVM.search_box" type="search" class="form-control" placeholder="{{productsVM.only_availables == true ? 'Buscar unicamente en productos disponibles' : 'Buscar en productos destacados'}}" aria-label="Buscar Producto">
       <div class="input-group-append">
-        <button ng-click="productsVM.cleanSearchBox()" class="btn btn-danger" ng-disabled="!productsVM.search_box.length"><i class="fas fa-eraser"></i></button>
+        <button ng-click="productsVM.cleanSearchBox()" class="btn btn-danger" ng-disabled="!productsVM.search_box.length"><i class="far fa-times-circle"></i></button>
       </div>
       <div class="input-group-append">
         <button ng-click="productsVM.showOnlyAvailableProducts()" ng-class="{'btn-success': (productsVM.only_availables == true)}" class="btn btn-primary">
@@ -28,7 +28,7 @@
   </h5>
   <!-- Product -->
   <div ng-repeat="product in productsVM.list_of_products | filter : productsVM.search_box | filter : ({available:productsVM.only_availables} || '') | limitTo : productsVM.limit_to : beginner track by $index" class="product col-md-6 col-lg-4">
-    <product-element product="product"></product-element>
+    <product-element></product-element>
   </div>
 
   <div class="col-md-12 text-center"> 
