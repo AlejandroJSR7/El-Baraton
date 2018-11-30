@@ -3,7 +3,7 @@ angular
   .directive('productElement', productDirective);
 function productDirective() {
   const directive = {
-    templateUrl: 'app/components/product/product.view.html',
+    templateUrl: 'components/product/product.view.html',
     restrict: 'E',
     scope: false
   };

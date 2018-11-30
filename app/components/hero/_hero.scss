@@ -1,0 +1,9 @@
+.hero {
+  border: 5px solid #FF5252;
+}
+.hero__figure { margin: 0; }
+.hero__figure img {
+  border-radius: 3px;
+  box-shadow: 0 0 10px 0 #FF5252;
+  max-height: 200px;
+}

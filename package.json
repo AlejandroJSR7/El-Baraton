@@ -1,0 +1,32 @@
+{
+  "name": "el_baraton",
+  "version": "1.0.0",
+  "description": "Ya no tienes que salir de tu casa u oficina para disfrutar lo mejor de tu ciudad. Te llevamos cualquier cosa en minutos. El Baratón llegó para cambiarte la vida.",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:AlejandroJSR7/El-Baraton.git"
+  },
+  "keywords": [
+    "angularjs",
+    "example",
+    "angularjs",
+    "rappi",
+    "angularjs"
+  ],
+  "author": "AlejandroJSR7 <AlejandroJSR7@Gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}

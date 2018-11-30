@@ -1,0 +1,30 @@
+/// /// /// /// /// ///
+  /// El Baratón ///
+/// /// /// /// /// ///
+
+/*
+  font-family: 'Playfair Display', serif;
+  font-family: 'Bangers', cursive;
+*/
+
+// APP VARIABLES
+
+// General
+@import 'styles-general/_helpers';
+// Sections
+@import 'sections/home/_home';
+@import 'sections/login/_login';
+@import 'sections/register/_register';
+// Shared
+@import 'shared/categories/_categories';
+@import 'shared/header/_header';
+@import 'shared/sidebar/_sidebar';
+// Components
+@import 'components/cart/_cart';
+@import 'components/favorites/_favorites';
+@import 'components/filters/_filters';
+@import 'components/hero/_hero';
+@import 'components/modals/_modals';
+@import 'components/product/_product';
+@import 'components/products-layout/_products-layout';
+@import 'components/thanks/_thanks';

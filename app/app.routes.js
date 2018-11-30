@@ -8,22 +8,22 @@ angular.module('elBaratonApp')
       let home = {
         controller: 'HomeController',
         controllerAs: 'homeVM',
-        templateUrl: 'app/sections/home/home.view.html'
+        templateUrl: 'sections/home/home.view.html'
       };
       let login = {
         controller: 'LoginController',
         controllerAs: 'loginVM',
-        templateUrl: 'app/sections/login/login.view.html'
+        templateUrl: 'sections/login/login.view.html'
       };
       let register = {
         controller: 'RegisterController',
         controllerAs: 'registerVM',
-        templateUrl: 'app/sections/register/register.view.html'
+        templateUrl: 'sections/register/register.view.html'
       };
       let categories = {
         controller: 'CategoriesController',
         controllerAs: 'categoriesVM',
-        templateUrl: 'app/sections/categories/categories.view.html'
+        templateUrl: 'sections/categories/categories.view.html'
       };
 
       $routeProvider

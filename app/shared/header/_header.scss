@@ -1,0 +1,14 @@
+header {
+  border-bottom: 1px solid #e5e5e5;
+  line-height: 1;
+}
+.header__logo {
+  color: #FF5252;
+  font-family: "Bangers", "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 2.25rem;
+}
+.header__logo:hover { text-decoration: none; }
+header .nav-user-items i { cursor: pointer; font-size: 20px; }
+header .nav-user-items .nav-item:last-child { margin-right: 10px; }
+header .nav-user-items .nav-item:not(:last-child) { margin-right: 10px; }
+header .nav-user-items a.nav-item { color: #ffffff; }
