@@ -5,6 +5,6 @@ angular
 
   homeController.$inject = [];
   function homeController() {
-    var homeVM = this;
+    const homeVM = this;
     homeVM.title = 'Hola Mundo';
   }

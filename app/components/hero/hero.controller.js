@@ -5,7 +5,7 @@ angular
 
   heroController.$inject = ['ProductsService'];
   function heroController(productsService) {
-    var heroVM = this;
+    const heroVM = this;
     heroVM.title = 'Hero (=';
     heroVM.featured_product = {};
     heroVM.getProducts = getProducts;

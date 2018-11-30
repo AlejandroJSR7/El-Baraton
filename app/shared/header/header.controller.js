@@ -5,6 +5,6 @@ angular
 
   headerController.$inject = [];
   function headerController() {
-    var headerVM = this;
+    const headerVM = this;
     headerVM.header_brand = 'El Baratón';
   }

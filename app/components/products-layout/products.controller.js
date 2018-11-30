@@ -5,7 +5,7 @@ angular
 
   productsController.$inject = ['ProductsService', 'LocalStorageService'];
   function productsController(productsService, localStorageService) {
-    var productsVM = this;
+    const productsVM = this;
     productsVM.title = 'Products (=';
     productsVM.list_of_products = [];
     productsVM.limit_to = 6;

@@ -12,7 +12,7 @@ function dataService($http, $log) {
     // products_on_cart_ls
     // products_on_favorites_ls
 
-    var data = {
+    const data = {
       'getToken': getToken,
       'getCartProducts': getCartProducts,
       'addProductToCart': addProductToCart,

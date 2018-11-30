@@ -5,6 +5,6 @@ angular
 
   loginController.$inject = [];
   function loginController() {
-    var loginVM = this;
+    const loginVM = this;
     loginVM.title = 'Acceder (=';
   }

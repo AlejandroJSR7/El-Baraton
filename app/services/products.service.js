@@ -10,7 +10,7 @@ angular
   .factory('ProductsService', dataService);
 
 function dataService($http, BASE_URL, PRODUCTS_API, $log) {
-  var data = {
+  const data = {
     'getAllProducts': getAllProducts,
     'getFeaturedProduct': getFeaturedProduct,
   };
@@ -26,7 +26,7 @@ function dataService($http, BASE_URL, PRODUCTS_API, $log) {
     });
   }
   function makeRequest(params) {
-    var requestUrl = BASE_URL + PRODUCTS_API;
+    let requestUrl = BASE_URL + PRODUCTS_API;
     if(params) {
     angular.forEach(params, function(value, key){
       requestUrl = requestUrl + '&' + key + '=' + value;

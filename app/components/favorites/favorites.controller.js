@@ -5,7 +5,7 @@ angular
 
   favoritesController.$inject = ['ProductsService', 'LocalStorageService'];
   function favoritesController(productsService, localStorageService) {
-    var favoritesVM = this;
+    const favoritesVM = this;
     favoritesVM.title = 'favorites (=';
     favoritesVM.products_favorites = [];
     favoritesVM.getLocalStorageInformation = getLocalStorageInformation;

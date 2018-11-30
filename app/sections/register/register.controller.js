@@ -5,6 +5,6 @@ angular
 
   registerController.$inject = [];
   function registerController() {
-    var registerVM = this;
+    const registerVM = this;
     registerVM.title = 'Registrarme (=';
   }

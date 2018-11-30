@@ -10,7 +10,7 @@ angular
     .factory('CategoriesService', dataService);
 
 function dataService($http, BASE_URL, CATEGORIES_API, $log) {
-    var data = {
+    const data = {
       'getAllCategories': getAllCategories,
     };
     function getAllCategories() {
@@ -19,7 +19,7 @@ function dataService($http, BASE_URL, CATEGORIES_API, $log) {
       });
     }
     function makeRequest(params) {
-      var requestUrl = BASE_URL + CATEGORIES_API;
+      let requestUrl = BASE_URL + CATEGORIES_API;
       if(params) {
         angular.forEach(params, function(value, key){
             requestUrl = requestUrl + '&' + key + '=' + value;

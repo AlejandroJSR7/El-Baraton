@@ -5,7 +5,7 @@ angular
 
   cartController.$inject = ['ProductsService', 'LocalStorageService'];
   function cartController(productsService, localStorageService) {
-    var cartVM = this;
+    const cartVM = this;
     cartVM.title = 'cart (=';
     cartVM.products_cart = [];
     cartVM.getLocalStorageInformation = getLocalStorageInformation;
