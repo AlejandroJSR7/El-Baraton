@@ -20,6 +20,7 @@ function dataService($http, $log) {
       'addProductToFavorites': addProductToFavorites,
       'cleanCart': cleanCart,
       'cleanFavorites': cleanFavorites,
+      'removeIndividualProduct': removeIndividualProduct
     };
     function getCartProducts() {
       return getToken('products_on_cart_ls');
@@ -38,6 +39,9 @@ function dataService($http, $log) {
     }
     function cleanFavorites() {
       cleanLS('products_on_favorites_ls');
+    }
+    function removeIndividualProduct(products_list) {
+      localStorage.setItem('products_on_cart_ls', JSON.stringify(products_list));
     }
 
     // Functions

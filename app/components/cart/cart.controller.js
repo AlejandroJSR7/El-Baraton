@@ -3,8 +3,8 @@ angular
   .module('elBaratonApp')
   .controller('CartController', cartController);
 
-  cartController.$inject = ['ProductsService', 'LocalStorageService'];
-  function cartController(productsService, localStorageService) {
+  cartController.$inject = ['ProductsService', 'LocalStorageService', '$location'];
+  function cartController(productsService, localStorageService, $location) {
     const cartVM = this;
     cartVM.title = 'cart (=';
     cartVM.products_cart = [];
@@ -33,6 +33,7 @@ angular
 
     function goToCartPage() {
       console.log('goToCartPage');
+      $location.url('/shop');
     }
 
     (function init() {

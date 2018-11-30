@@ -130,3 +130,11 @@ header .dropdown-item { padding: 10px 20px; }
 .filter-input--txt {
   font-size: 0.9em;
 }
+
+/* >>> Shop <<< */
+.shop-item {}
+.icon-remove {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
