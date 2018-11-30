@@ -20,11 +20,17 @@ angular.module('elBaratonApp')
         controllerAs: 'registerVM',
         templateUrl: 'app/sections/register/register.view.html'
       };
+      let categories = {
+        controller: 'CategoriesController',
+        controllerAs: 'categoriesVM',
+        templateUrl: 'app/sections/categories/categories.view.html'
+      };
 
       $routeProvider
       .when('/', home)
       .when('/login', login)
       .when('/register', register)
+      .when('/categories/:id', categories)
       .otherwise({
         redirectTo: '/'
       });

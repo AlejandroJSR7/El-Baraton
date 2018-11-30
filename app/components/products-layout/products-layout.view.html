@@ -1,9 +1,31 @@
 <div class="row mb-2" ng-controller="ProductsController as productsVM">
-  <div class="css-order-by col-md-12 d-flex justify-content-start align-items-center mb-3">
+  <div class="css-order-by col-md-6 d-flex justify-content-start align-items-center mb-3">
     <span class="mr-2">Ordenar por:</span>
     <button class="btn btn-outline-primary mr-2" ng-click="productsVM.orderProductsBy('available')" ng-class="{'btn-outline-success': (productsVM.order_by == 'available')}">Disponibilidad</button>
     <button class="btn btn-outline-primary mr-2" ng-click="productsVM.orderProductsBy('quantity')" ng-class="{'btn-outline-success': (productsVM.order_by == 'quantity')}">Cantidad</button>
     <button class="btn btn-outline-primary mr-2" ng-click="productsVM.orderProductsBy('price')" ng-class="{'btn-outline-success': (productsVM.order_by == 'price')}">Precio</button>
+  </div>
+  <div class="col-md-6 d-flex justify-content-end align-items-center mb-3">
+    <span class="mr-2">Filtrar: </span>
+    <button class="btn btn-outline-primary mr-2" ng-click="productsVM.showOnlyAvailableProducts()" ng-class="{'btn-outline-success': (productsVM.only_availables == true)}">Solo disponibles</button>
+    <div class="input-group mr-2">
+      <div class="input-group-prepend">
+        <span class="input-group-text bg-primary text-white">
+          <i class="fas fa-arrow-up"></i>
+        </span> 
+      </div>
+      <input ng-model="productsVM.filter_by_quantity_input" type="number" class="filter-input--txt form-control" placeholder="Cantidad:">
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text bg-success text-white"><i class="fas fa-dollar-sign"></i></span>
+      </div>
+      <input ng-model="productsVM.filter_between_price_input_min" type="number" class="filter-input--txt form-control" placeholder="Min">
+      <input ng-model="productsVM.filter_between_price_input_max" type="number" class="filter-input--txt form-control" placeholder="Max">
+    </div>
+    <button ng-click="productsVM.clearFilters()" class="btn btn-outline-danger ml-2" type="button">
+      <i class="far fa-times-circle"></i>
+    </button> 
   </div>
   <div class="col-md-12 text-center">
     <div class="input-group mb-3">
@@ -33,11 +55,11 @@
     </small>
   </h5>
   <!-- Product -->
-  <div ng-repeat="product in productsVM.list_of_products | filter : productsVM.search_box | filter : ({available:productsVM.only_availables} || '') | orderBy : productsVM.order_by  | limitTo : productsVM.limit_to : beginner track by $index" class="product col-md-6 col-lg-4">
+  <div ng-repeat="product in productsVM.list_of_products | filter : productsVM.greaterThan('quantity', productsVM.filter_by_quantity_input) | filter : productsVM.search_box | filter : ({available:productsVM.only_availables} || '') | orderBy : productsVM.order_by | limitTo : productsVM.limit_to : product track by $index" class="product col-md-6 col-lg-4">
     <product-element></product-element>
   </div>
 
   <div class="col-md-12 text-center"> 
-      <button ng-click="productsVM.loadMoreProducts()" class="btn btn-primary">Cargar más productos...</button>
+    <button ng-click="productsVM.loadMoreProducts()" class="btn btn-primary">Cargar más productos...</button>
   </div>
 </div>

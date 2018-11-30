@@ -31,7 +31,6 @@ angular
     }
 
     (function init() {
-      document.addEventListener('DOMContentLoaded', getProductsFromLS);
       favoritesVM.getProductsFromLS();
     })();
   }

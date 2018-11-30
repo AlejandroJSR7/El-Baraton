@@ -11,8 +11,8 @@
   <figure class="product__figure">
     <img class="card-img-right flex-auto d-none d-lg-block" data-src="https://images.rappi.com.ar/products/{{product.img}}" alt="{{product.name}}" src="https://images.rappi.com.ar/products/{{product.img}}" data-holder-rendered="true" style="width: 200px; max-height: 200px;">
   </figure>
-  <div class="product-options">
-    <!-- <button class="product-options__option--see text-primary btn btn-link">Ver Detalles</button> -->
-    <button ng-click="productsVM.addToCart($event, product)" class="product-options__option--buy text-success btn btn-link ">Agregar a la Compra</button>
+  <div class="product-options bg-success">
+    <!-- <button class="product-options__option--see btn btn-primary">Ver Detalles</button> -->
+    <button ng-click="productsVM.addToCart($event, product)" class="product-options__option--buy btn btn-success">Agregar a la Compra</button>
   </div>
 </div>

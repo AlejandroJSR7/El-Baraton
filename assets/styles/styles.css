@@ -88,6 +88,7 @@ header .nav-user-items a.nav-item { color: #ffffff; }
   align-items: center;
   background-color: var(--white);
   bottom: 0;
+  border-radius: 0 0 3px 3px;
   display: flex;
   height: 25%;
   justify-content: space-around;
@@ -124,4 +125,8 @@ header .nav-user-items a.nav-item { color: #ffffff; }
 .css-order-by span,
 .css-order-by .btn, {
   margin-right: 10px;
+}
+header .dropdown-item { padding: 10px 20px; }
+.filter-input--txt {
+  font-size: 0.9em;
 }

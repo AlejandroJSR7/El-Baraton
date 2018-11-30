@@ -13,6 +13,10 @@ angular
     productsVM.only_availables = '';
     productsVM.order_by = '';
     productsVM.products_list = [];
+    productsVM.filter_by_quantity_input = null;
+    productsVM.filter_between_price_input_min = null;
+    productsVM.filter_between_price_input_max = null;
+
     productsVM.getLocalStorageInformationCart = getLocalStorageInformationCart;
     productsVM.getLocalStorageInformationFavorites = getLocalStorageInformationFavorites;
     productsVM.getProducts = getProducts;
@@ -22,6 +26,8 @@ angular
     productsVM.cleanSearchBox = cleanSearchBox;
     productsVM.addToFavorites = addToFavorites;
     productsVM.addToCart = addToCart;
+    productsVM.greaterThan = greaterThan;
+    productsVM.clearFilters = clearFilters;
     
     function getLocalStorageInformationCart() {
       let products_on_cart_ls;
@@ -87,6 +93,31 @@ angular
       products_on_cart_ls = productsVM.getLocalStorageInformationCart();
       products_on_cart_ls.push(product);
       localStorageService.addProductToCart(products_on_cart_ls);
+    }
+
+    function greaterThan(prop, val) {
+      return function(item) {
+        return item[prop] >= val;
+      }
+    }
+
+    productsVM.rangePriceMin = rangePriceMin;
+    function rangePriceMin(prop, min_val) {
+      return function(item) {
+        return item[prop] >= min_val;
+      }
+    }
+    productsVM.rangePriceMax = rangePriceMax;
+    function rangePriceMax(prop, max_val) {
+      return function(item) {
+        return item[prop] <= max_val;
+      }
+    }
+    
+    function clearFilters() {
+      productsVM.filter_by_quantity_input = null;
+      productsVM.filter_between_price_input_min = null;
+      productsVM.filter_between_price_input_max = null;
     }
 
     (function init() {

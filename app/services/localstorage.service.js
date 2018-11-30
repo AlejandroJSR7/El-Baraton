@@ -52,7 +52,7 @@ function dataService($http, $log) {
       return JSON.parse(localStorage.getItem(key));
     }
     function cleanLS(key) {
-      return localStorage.clear('cursos');
+      return localStorage.clear(key);
     }
 
     return data;
