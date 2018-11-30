@@ -14,14 +14,14 @@ function dataService($http, BASE_URL, CATEGORIES_API, $log) {
       'getAllCategories': getAllCategories,
     };
     function getAllCategories() {
-      return makeRequest().then(function(data) {
+      return makeRequest().then((data) => {
         return data.categories;
       });
     }
     function makeRequest(params) {
       let requestUrl = BASE_URL + CATEGORIES_API;
       if(params) {
-        angular.forEach(params, function(value, key){
+        angular.forEach(params, (value, key) => {
             requestUrl = requestUrl + '&' + key + '=' + value;
         });
       }
@@ -32,7 +32,7 @@ function dataService($http, BASE_URL, CATEGORIES_API, $log) {
               'Content-Type': 'application/json'
           },
           'cache': true
-      }).then(function(response) {
+      }).then((response) => {
           return response.data;
       }).catch(dataServiceError);
     }

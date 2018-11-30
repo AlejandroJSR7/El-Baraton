@@ -50,7 +50,7 @@ angular
     }
 
     function getProducts() {
-      productsService.getAllProducts().then(function(response) {
+      productsService.getAllProducts().then((response) => {
         productsVM.list_of_products = response;
         console.log('productsVM.list_of_products', productsVM.list_of_products);
       });
@@ -96,20 +96,20 @@ angular
     }
 
     function greaterThan(prop, val) {
-      return function(item) {
+      return (item) => {
         return item[prop] >= val;
       }
     }
 
     productsVM.rangePriceMin = rangePriceMin;
     function rangePriceMin(prop, min_val) {
-      return function(item) {
+      return (item) => {
         return item[prop] >= min_val;
       }
     }
     productsVM.rangePriceMax = rangePriceMax;
     function rangePriceMax(prop, max_val) {
-      return function(item) {
+      return (item) => {
         return item[prop] <= max_val;
       }
     }
