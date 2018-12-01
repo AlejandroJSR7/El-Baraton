@@ -23,7 +23,7 @@ angular.module('elBaratonApp')
       let categories = {
         controller: 'CategoriesController',
         controllerAs: 'categoriesVM',
-        templateUrl: 'app/sections/categories/categories.view.html'
+        templateUrl: 'app/sections/categories-page/categories-page.view.html'
       };
       let shop = {
         controller: 'ShopController',
@@ -35,6 +35,7 @@ angular.module('elBaratonApp')
       .when('/', home)
       .when('/login', login)
       .when('/register', register)
+      .when('/categories/', categories)
       .when('/categories/:id', categories)
       .when('/shop', shop)
       .otherwise({

@@ -8,9 +8,9 @@
   </div>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 order-md-2">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span class="text-muted">Your cart</span>
+        <span class="text-muted">Tu Canasta</span>
         <span class="badge badge-secondary badge-pill">{{shopVM.products_cart.length}}</span>
       </h4>
       <ul class="list-group mb-3">
@@ -23,7 +23,7 @@
         </li>
         <li class="list-group-item d-flex justify-content-between bg-light">
           <div class="text-success">
-            <h6 class="my-0">Promo code</h6>
+            <h6 class="my-0">Código de promoción</h6>
             <small>{{shopVM.promo_code_example || uppercase}}</small>
           </div>
           <span class="text-success">-${{shopVM.promo_code_discount}}</span>
@@ -31,6 +31,9 @@
         <li class="list-group-item d-flex justify-content-between">
           <span>Total (USD)</span>
           <strong>{{(shopVM.total_products_price - shopVM.promo_code_discount) | currency}}</strong>
+        </li>
+        <li class="list-group-item">
+          <button ng-click="shopVM.buy()" class="btn btn-primary btn-lg btn-block" type="button">Pagar</button>
         </li>
       </ul>
 
@@ -43,19 +46,20 @@
         </div>
       </form>
     </div>
-    <div class="col-md-8">
-      <h4 class="mb-3">Información de facturación</h4>
-      <div>
-        <div class="card mb-2" ng-repeat="shop_product in shopVM.products_cart">
-          <div class="card-body">
-            <h5 class="card-title">{{shop_product.name}}</h5>
-            <p class="card-text">{{shop_product.description}}.</p>
-            <a ng-click="shopVM.removeProductFromLS($event, shop_product)" href="#" class="icon-remove btn btn-danger">
-              <i class="far fa-trash-alt"></i>
-            </a>
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Productos</h4>
+      <ul class="list-group">
+        <li class="list-group-item product-in-shop media mb-2" ng-repeat="shop_product in shopVM.products_cart">
+          <img class="mr-3" src="https://images.rappi.com.ar/products/{{shop_product.img}}" alt="Generic placeholder image">
+          <div class="media-body">
+            <h5 class="mt-0">{{shop_product.name}}</h5>
+            {{shop_product.description}}
           </div>
-        </div>
-      </div>
+          <a ng-click="shopVM.removeProductFromLS($event, shop_product)" href="#" class="icon-remove btn btn-danger">
+            <i class="far fa-trash-alt"></i>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 

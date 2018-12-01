@@ -32,7 +32,6 @@ angular
     }
 
     function goToCartPage() {
-      console.log('goToCartPage');
       $location.url('/shop');
     }
 

@@ -132,7 +132,13 @@ header .dropdown-item { padding: 10px 20px; }
 }
 
 /* >>> Shop <<< */
-.shop-item {}
+.product-in-shop {
+  position: relative;
+}
+.product-in-shop img {
+  height: 64px;
+  width: 64px;
+}
 .icon-remove {
   position: absolute;
   right: 10px;

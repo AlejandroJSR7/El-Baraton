@@ -6,7 +6,7 @@ angular
   categoriesController.$inject = ['CategoriesService'];
   function categoriesController(categoriesService) {
     const categoriesVM = this;
-    categoriesVM.title = 'Acceder (=';
+    categoriesVM.title = 'Categories (=';
     categoriesVM.list_of_categories = [];
 
      categoriesService.getAllCategories().then(function(response) {

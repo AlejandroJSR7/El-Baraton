@@ -51,7 +51,7 @@
       <span ng-if="productsVM.only_availables == true">Productos disponibles: <q ng-if="productsVM.search_box.length">{{productsVM.search_box}}</q></span>
     </div>
     <small>
-      <a href="/index.html?#!/categories">Ver todas las categorías</a>
+      <a ng-click="productsVM.goToUrl('/categories')" href="#">Ver todas las categorías</a>
     </small>
   </h5>
   <!-- Product -->

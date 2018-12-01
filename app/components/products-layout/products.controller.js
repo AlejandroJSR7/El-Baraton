@@ -3,8 +3,8 @@ angular
   .module('elBaratonApp')
   .controller('ProductsController', productsController);
 
-  productsController.$inject = ['ProductsService', 'LocalStorageService'];
-  function productsController(productsService, localStorageService) {
+  productsController.$inject = ['ProductsService', 'LocalStorageService', '$location'];
+  function productsController(productsService, localStorageService, $location) {
     const productsVM = this;
     productsVM.title = 'Products (=';
     productsVM.list_of_products = [];
@@ -16,6 +16,12 @@ angular
     productsVM.filter_by_quantity_input = null;
     productsVM.filter_between_price_input_min = null;
     productsVM.filter_between_price_input_max = null;
+
+    productsVM.goToUrl = goToUrl;
+
+    function goToUrl(url) {
+      $location.url(url);
+    }
 
     productsVM.getLocalStorageInformationCart = getLocalStorageInformationCart;
     productsVM.getLocalStorageInformationFavorites = getLocalStorageInformationFavorites;
