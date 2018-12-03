@@ -16,13 +16,6 @@ angular
     productsVM.filter_by_quantity_input = null;
     productsVM.filter_between_price_input_min = null;
     productsVM.filter_between_price_input_max = null;
-
-    productsVM.goToUrl = goToUrl;
-
-    function goToUrl(url) {
-      $location.url(url);
-    }
-
     productsVM.getLocalStorageInformationCart = getLocalStorageInformationCart;
     productsVM.getLocalStorageInformationFavorites = getLocalStorageInformationFavorites;
     productsVM.getProducts = getProducts;
@@ -34,6 +27,7 @@ angular
     productsVM.addToCart = addToCart;
     productsVM.greaterThan = greaterThan;
     productsVM.clearFilters = clearFilters;
+    productsVM.goToUrl = goToUrl;
     
     function getLocalStorageInformationCart() {
       let products_on_cart_ls;
@@ -123,6 +117,10 @@ angular
       productsVM.filter_by_quantity_input = null;
       productsVM.filter_between_price_input_min = null;
       productsVM.filter_between_price_input_max = null;
+    }
+
+    function goToUrl(url) {
+      $location.url(url);
     }
 
     (function init() {
