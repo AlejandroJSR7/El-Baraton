@@ -1,13 +1,14 @@
-<div class="nav-scroller py-1 mb-2" ng-controller="CategoriesController as categoriesVM">
-  <nav class="nav d-flex flex-wrap justify-content-center categories-nav">
-    <!-- <a  class="p-2 text-muted" href="javascript:void(0)"></a> -->
-    <span ng-repeat="categorie in categoriesVM.list_of_categories" class="dropdown">
-      <a class="dropdown-toggle text-dark mr-1 ml-1" href="javascript:void(0)" id="dropdownMenuNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{categorie.name}}
-      </a>
-      <div ng-if="categorie.sublevels" class="dropdown-menu" aria-labelledby="dropdownMenuNav">
-        <a ng-repeat="sublevel in categorie.sublevels" ng-click="categoriesVM.goToUrl(sublevel)" class="dropdown-item" href="#">{{sublevel.name}}</a>
-      </div>
-    </span>
-  </nav>
+<div class="container">
+  <div class="nav-scroller py-1 mb-2" ng-controller="CategoriesController as categoriesVM">
+    <nav class="nav d-flex flex-wrap justify-content-center categories-nav">
+      <span ng-repeat="categorie in categoriesVM.list_of_categories" class="dropdown">
+        <a class="dropdown-toggle text-muted mr-1 ml-1" href="javascript:void(0)" id="dropdownMenuNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{categorie.name}}
+        </a>
+        <div ng-if="categorie.sublevels" class="dropdown-menu" aria-labelledby="dropdownMenuNav">
+          <a ng-repeat="sublevel in categorie.sublevels" ng-click="categoriesVM.goToUrl($event, sublevel)" class="dropdown-item" href="#">{{sublevel.name}}</a>
+        </div>
+      </span>
+    </nav>
+  </div>
 </div>

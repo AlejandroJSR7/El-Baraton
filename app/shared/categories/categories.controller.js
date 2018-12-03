@@ -12,11 +12,10 @@ angular
     
     categoriesService.getAllCategories().then(function(response) {
       categoriesVM.list_of_categories = response;
-      console.log('categoriesVM.list_of_categories', categoriesVM.list_of_categories)
     });
 
-    function goToUrl(sublevel) {
-      console.log('sublevel', sublevel)
+    function goToUrl($event, sublevel) {
+      $event.preventDefault();
       $location.url('/category/products/' +  sublevel.id);
     }
 

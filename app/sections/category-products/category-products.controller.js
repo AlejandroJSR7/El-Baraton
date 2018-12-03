@@ -13,7 +13,6 @@ angular
     if ($routeParams.id) {
       productsService.getProductsByCategory($routeParams.id).then(function(response) {
         categoryProductsVM.list_of_categorie_products = response;
-        console.log('categoryProductsVM.list_of_categorie_products', categoryProductsVM.list_of_categorie_products)
       });
     }
 
