@@ -11,7 +11,10 @@
   <figure class="product__figure">
     <img class="card-img-right flex-auto d-none d-lg-block" data-src="https://images.rappi.com.ar/products/{{product.img}}" alt="{{product.name}}" src="https://images.rappi.com.ar/products/{{product.img}}" data-holder-rendered="true" style="width: 200px; max-height: 200px;">
   </figure>
-  <div class="product-options bg-success">
-    <button ng-click="productsVM.addToCart(product)" class="product-options__option--buy btn btn-success">Agregar a la Compra</button>
+  <div class="product-options bg-success" ng-class="{'bg-danger': productsVM.productIsInCart(product)}">
+    <button ng-click="productsVM.addToCart(product)" ng-class="{'btn-danger': productsVM.productIsInCart(product)}" class="product-options__option--buy btn btn-success">
+        <span ng-if="!productsVM.productIsInCart(product)">Agregar a la Compra</span>
+        <span ng-if="productsVM.productIsInCart(product)">Agregado</span>
+    </button>
   </div>
 </div>

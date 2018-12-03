@@ -5,7 +5,10 @@
       <h2 class="font-italic text-dark">{{heroVM.featured_product.name}}</h2>
       <p class="lead my-3 text-dark">{{heroVM.featured_product.description}}.</p>
       <p class="lead mb-0">
-        <a ng-click="heroVM.addToCart(heroVM.featured_product)" href="javascript:void(0)" class="btn btn-outline-success font-weight-bold">Comprar</a>
+        <a ng-click="heroVM.addToCart(heroVM.featured_product)" ng-class="{'btn-outline-danger': heroVM.productIsInCart(heroVM.featured_product)}" href="javascript:void(0)" class="btn btn-outline-success font-weight-bold">
+          <span ng-if="!heroVM.productIsInCart(heroVM.featured_product)">Comprar</span>
+          <span ng-if="heroVM.productIsInCart(heroVM.featured_product)">Agregado</span>
+        </a>
       </p>
     </div>
     <div class="col-md-4 px-0 text-right">

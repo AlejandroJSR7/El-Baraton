@@ -20,7 +20,8 @@ function dataService($http, $log) {
       'cleanCart': cleanCart,
       'cleanFavorites': cleanFavorites,
       'removeIndividualProduct': removeIndividualProduct,
-      'checkIfProductIsFavorite': checkIfProductIsFavorite
+      'checkIfProductIsFavorite': checkIfProductIsFavorite,
+      'checkIfProductIsInCart': checkIfProductIsInCart,
     };
     function getCartProducts() {
       return getLocalStorage('products_on_cart_ls');
@@ -46,6 +47,10 @@ function dataService($http, $log) {
     function checkIfProductIsFavorite(product) {
       let favorite_products = getFavoritesProducts();
       return favorite_products.has(product.id);
+    }
+    function checkIfProductIsInCart(product) {
+      let cart_products = getCartProducts();
+      return cart_products.has(product.id);
     }
 
     // Functions

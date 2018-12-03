@@ -29,6 +29,7 @@ angular
     productsVM.clearFilters = clearFilters;
     productsVM.goToUrl = goToUrl;
     productsVM.isFavorite = isFavorite;
+    productsVM.productIsInCart = productIsInCart;
     
     function getLocalStorageInformationCart() {
       let products_on_cart_ls;
@@ -125,6 +126,12 @@ angular
       let is_favorite = false;
       is_favorite = localStorageService.checkIfProductIsFavorite(product);
       return is_favorite;
+    }
+
+    function productIsInCart(product) {
+      let is_in_cart = false;
+      is_in_cart = localStorageService.checkIfProductIsInCart(product);
+      return is_in_cart;
     }
 
     (function init() {
