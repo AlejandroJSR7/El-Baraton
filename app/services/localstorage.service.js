@@ -40,8 +40,8 @@ function dataService($http, $log) {
     function cleanFavorites() {
       cleanLS('products_on_favorites_ls');
     }
-    function removeIndividualProduct(products_list) {
-      localStorage.setItem('products_on_cart_ls', JSON.stringify(products_list));
+    function removeIndividualProduct(products_on_cart_ls) {
+      setLocalStorage('products_on_cart_ls', products_on_cart_ls);
     }
 
     // Functions
