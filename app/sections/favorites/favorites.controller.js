@@ -24,7 +24,6 @@ angular
 
     function getProductsFromLS() {
       favoritesVM.products_favorites = localStorageService.getFavoritesProducts();
-      console.log('favoritesVM.products_favorites', favoritesVM.products_favorites)
     }
 
     function goToMainPage() {

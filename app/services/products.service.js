@@ -13,6 +13,7 @@ function dataService($http, BASE_URL, PRODUCTS_API, $log) {
   const data = {
     'getAllProducts': getAllProducts,
     'getFeaturedProduct': getFeaturedProduct,
+    'getProductsByCategory': getProductsByCategory,
   };
   function getAllProducts() {
     return makeRequest().then((data) => {
@@ -23,6 +24,17 @@ function dataService($http, BASE_URL, PRODUCTS_API, $log) {
     return makeRequest().then((data) => {
       let random_featured_post_index = Math.floor((Math.random() * data.products.length) + 1);
       return data.products[random_featured_post_index];
+    });
+  }
+  function getProductsByCategory(sublevel_id) {
+    return makeRequest().then((data) => {
+      let products_by_category = new Map();
+      data.products.forEach((product) => {
+        if(product.sublevel_id == sublevel_id) {
+          products_by_category.set(product.id, product);
+        }
+      })
+      return products_by_category;
     });
   }
   function makeRequest(params) {

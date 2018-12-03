@@ -1,3 +1,6 @@
-<div class="container">
-  <h1>{{categoriesVM.title}}</h1>
+<h4 class="text-center mt-4">{{categoriesVM.title}}</h4>
+<div class="d-flex justify-content-between flex-wrap">
+  <button ng-repeat="categorie in categoriesVM.list_of_categories" type="button" class="btn btn-primary mb-2 mt-4">
+    {{categorie.name}} <span class="badge badge-light">4</span>
+  </button>
 </div>

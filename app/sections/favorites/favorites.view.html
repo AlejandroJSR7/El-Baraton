@@ -1,27 +1,16 @@
-<div class="container">
-  <div ng-include="'app/shared/header/header.view.html'"></div>
-  <section class="jumbotron text-center bg-white">
-  <div class="my-3 p-3 bg-white rounded shadow-sm">
-    <h6 class="border-bottom border-gray pb-2 mb-0 text-left">Productos Favoritos</h6>
-    <p ng-if="!favoritesVM.products_favorites.size" class="text-center mt-4">No hay productos en tu canasta de compra. <a ng-click="favoritesVM.goToPage('/')" href="javascript:void(0)">Volver a la Tienda</a></p>
-    <div ng-repeat="favorite_product in favoritesVM.products_favorites | fromMap" class="media text-muted pt-3 text-left">
-      <img data-src="https://images.rappi.com.ar/products/{{favorite_product.img}}" alt="32x32" class="mr-2 rounded" style="width: 32px; height: 32px;" src="https://images.rappi.com.ar/favorite_products/{{product.img}}" data-holder-rendered="true">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block text-gray-dark">{{favorite_product.name}}</strong>
-        {{favorite_product.description}}
-      </p>
-    </div>
-    <small class="d-block text-right mt-3">
-      <a ng-if="favoritesVM.products_favorites.size" href="javascript:void(0)">Todos los Favoritos</a>
-    </small>
+<section class="jumbotron text-center bg-white">
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+  <h6 class="border-bottom border-gray pb-2 mb-0 text-left">Productos Favoritos</h6>
+  <p ng-if="!favoritesVM.products_favorites.size" class="text-center mt-4">No hay productos en tu canasta de compra. <a ng-click="favoritesVM.goToPage('/')" href="javascript:void(0)">Volver a la Tienda</a></p>
+  <div ng-repeat="favorite_product in favoritesVM.products_favorites | fromMap" class="media text-muted pt-3 text-left">
+    <img data-src="https://images.rappi.com.ar/products/{{favorite_product.img}}" alt="32x32" class="mr-2 rounded" style="width: 32px; height: 32px;" src="https://images.rappi.com.ar/favorite_products/{{product.img}}" data-holder-rendered="true">
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block text-gray-dark">{{favorite_product.name}}</strong>
+      {{favorite_product.description}}
+    </p>
   </div>
-  </section>
+  <small class="d-block text-right mt-3">
+    <a ng-if="favoritesVM.products_favorites.size" href="javascript:void(0)">Todos los Favoritos</a>
+  </small>
 </div>
-<footer class="my-5 pt-5 text-muted text-center text-small">
-  <p class="mb-1">© 2017-2018 El Baratón</p>
-  <ul class="list-inline">
-    <li class="list-inline-item"><a href="javascript:void(0)">Privacy</a></li>
-    <li class="list-inline-item"><a href="javascript:void(0)">Terms</a></li>
-    <li class="list-inline-item"><a href="javascript:void(0)">Support</a></li>
-  </ul>
-</footer>
+</section>

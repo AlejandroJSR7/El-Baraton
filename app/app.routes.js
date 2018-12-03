@@ -25,6 +25,11 @@ angular.module('elBaratonApp')
         controllerAs: 'categoriesVM',
         templateUrl: 'app/sections/categories-page/categories-page.view.html'
       };
+      let category_products = {
+        controller: 'CategoryProductsController',
+        controllerAs: 'categoryProductsVM',
+        templateUrl: 'app/sections/category-products/category-products.view.html'
+      };
       let shop = {
         controller: 'ShopController',
         controllerAs: 'shopVM',
@@ -46,7 +51,7 @@ angular.module('elBaratonApp')
       .when('/login', login)
       .when('/register', register)
       .when('/categories/', categories)
-      .when('/categories/:id', categories)
+      .when('/category/products/:id', category_products)
       .when('/shop', shop)
       .when('/thanks', thanks)
       .when('/favorites', favorites)

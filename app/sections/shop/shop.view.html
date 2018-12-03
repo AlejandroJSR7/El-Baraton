@@ -1,75 +1,63 @@
-<div class="container">
-  <div ng-include="'app/shared/header/header.view.html'"></div>
-  <div class="py-5 text-center">
-    <h2>El Baratón</h2>
-    <div class="col-md-6 offset-md-3">
-      <p class="lead">Ya no tienes que salir de tu casa u oficina para disfrutar lo mejor de tu ciudad. Te llevamos cualquier cosa en minutos. El Baratón llegó para cambiarte la vida.</p>
-    </div>
+<div class="py-5 text-center">
+  <h2>El Baratón</h2>
+  <div class="col-md-6 offset-md-3">
+    <p class="lead">Ya no tienes que salir de tu casa u oficina para disfrutar lo mejor de tu ciudad. Te llevamos cualquier cosa en minutos. El Baratón llegó para cambiarte la vida.</p>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-md-4 order-md-2">
-      <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span class="text-muted">Tu Canasta</span>
-        <span class="badge badge-secondary badge-pill">{{shopVM.products_cart.length}}</span>
-      </h4>
-      <ul class="list-group mb-3">
-        <li ng-repeat="shop_product in shopVM.products_cart | fromMap" class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">{{shop_product.name}}</h6>
-            <small class="text-muted">{{shop_product.description}}</small>
-          </div>
-          <span class="text-muted">{{shop_product.price | currency}}</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between bg-light">
-          <div class="text-success">
-            <h6 class="my-0">Código de promoción</h6>
-            <small>{{shopVM.promo_code_example || uppercase}}</small>
-          </div>
-          <span class="text-success">-${{shopVM.promo_code_discount}}</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between">
-          <span>Total (USD)</span>
-          <strong>{{(shopVM.total_products_price - shopVM.promo_code_discount) | currency}}</strong>
-        </li>
-        <li class="list-group-item">
-          <button ng-click="shopVM.buy()" class="btn btn-primary btn-lg btn-block" type="button">Pagar</button>
-        </li>
-      </ul>
-
-      <form class="card p-2">
-        <div class="input-group">
-          <input ng-model="shopVM.promo_code_example" type="text" class="form-control" placeholder="Promo code">
-          <div class="input-group-append">
-            <button ng-click="shopVM.randomDiscount()" type="submit" class="btn btn-secondary">Redeem</button>
-          </div>
+<div class="row">
+  <div class="col-md-4 order-md-2">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+      <span class="text-muted">Tu Canasta</span>
+      <span class="badge badge-secondary badge-pill">{{shopVM.products_cart.length}}</span>
+    </h4>
+    <ul class="list-group mb-3">
+      <li ng-repeat="shop_product in shopVM.products_cart | fromMap" class="list-group-item d-flex justify-content-between lh-condensed">
+        <div>
+          <h6 class="my-0">{{shop_product.name}}</h6>
+          <small class="text-muted">{{shop_product.description}}</small>
         </div>
-      </form>
-    </div>
-    <div class="col-md-8 order-md-1">
-      <h4 class="mb-3">Productos</h4>
-      <p ng-if="!shopVM.products_cart.size" class="text-center">No hay productos en tu canasta de compra. <a ng-click="shopVM.goToPage('/')" href="javascript:void(0)">Volver a la Tienda</a></p>
-      <ul class="list-group">
-        <li ng-repeat="shop_product in shopVM.products_cart | fromMap" class="list-group-item product-in-shop media mb-2">
-          <img class="mr-3" src="https://images.rappi.com.ar/products/{{shop_product.img}}" alt="Generic placeholder image">
-          <div class="media-body">
-            <h5 class="mt-0">{{shop_product.name}}</h5>
-            {{shop_product.description}}
-          </div>
-          <a ng-click="shopVM.removeIndividualProductFromLS($event, shop_product)" href="javascript:void(0)" class="icon-remove btn btn-danger">
-            <i class="far fa-trash-alt"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">© 2017-2018 El Baratón</p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="javascript:void(0)">Privacy</a></li>
-      <li class="list-inline-item"><a href="javascript:void(0)">Terms</a></li>
-      <li class="list-inline-item"><a href="javascript:void(0)">Support</a></li>
+        <span class="text-muted">{{shop_product.price | currency}}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between bg-light">
+        <div class="text-success">
+          <h6 class="my-0">Código de promoción</h6>
+          <small>{{shopVM.promo_code_example || uppercase}}</small>
+        </div>
+        <span class="text-success">-${{shopVM.promo_code_discount}}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span>Total (USD)</span>
+        <strong>{{(shopVM.total_products_price - shopVM.promo_code_discount) | currency}}</strong>
+      </li>
+      <li class="list-group-item">
+        <button ng-click="shopVM.buy()" class="btn btn-primary btn-lg btn-block" type="button">Pagar</button>
+      </li>
     </ul>
-  </footer>
+
+    <form class="card p-2">
+      <div class="input-group">
+        <input ng-model="shopVM.promo_code_example" type="text" class="form-control" placeholder="Promo code">
+        <div class="input-group-append">
+          <button ng-click="shopVM.randomDiscount()" type="submit" class="btn btn-secondary">Redeem</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-8 order-md-1">
+    <h4 class="mb-3">Productos</h4>
+    <p ng-if="!shopVM.products_cart.size" class="text-center">No hay productos en tu canasta de compra. <a ng-click="shopVM.goToPage('/')" href="javascript:void(0)">Volver a la Tienda</a></p>
+    <ul class="list-group">
+      <li ng-repeat="shop_product in shopVM.products_cart | fromMap" class="list-group-item product-in-shop media mb-2">
+        <img class="mr-3" src="https://images.rappi.com.ar/products/{{shop_product.img}}" alt="Generic placeholder image">
+        <div class="media-body">
+          <h5 class="mt-0">{{shop_product.name}}</h5>
+          {{shop_product.description}}
+        </div>
+        <a ng-click="shopVM.removeIndividualProductFromLS($event, shop_product)" href="javascript:void(0)" class="icon-remove btn btn-danger">
+          <i class="far fa-trash-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
