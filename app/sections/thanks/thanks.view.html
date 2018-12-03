@@ -1,0 +1,23 @@
+<div class="container">
+  <div ng-include="'app/shared/header/header.view.html'"></div>
+  <section class="jumbotron text-center bg-white">
+    <div class="container">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="jumbotron-heading">Gracias por tu compra</h1>
+        <p class="lead text-muted">Como siempre, ¡gracias por tu compra! Por favor asegurate de visitar nuestra tienda la semana del 25 de cada mes, ¡ofreceremos un 25% de descuento en toda la mercadería!.</p>
+        <p>
+          <a ng-click="thanksVM.goToUrl('/')" href="javascript:void(0)" class="btn btn-primary my-2">Volver a la Tienda <i class="fas fa-shopping-basket"></i></a>
+          <a ng-click="thanksVM.goToUrl('/favorites')" href="javascript:void(0)" class="btn btn-danger my-2">Ir a Favoritos <i class="far fa-heart"></i></a>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+<footer class="my-5 pt-5 text-muted text-center text-small">
+  <p class="mb-1">© 2017-2018 El Baratón</p>
+  <ul class="list-inline">
+    <li class="list-inline-item"><a href="javascript:void(0)">Privacy</a></li>
+    <li class="list-inline-item"><a href="javascript:void(0)">Terms</a></li>
+    <li class="list-inline-item"><a href="javascript:void(0)">Support</a></li>
+  </ul>
+</footer>

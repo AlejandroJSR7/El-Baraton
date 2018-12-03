@@ -30,6 +30,16 @@ angular.module('elBaratonApp')
         controllerAs: 'shopVM',
         templateUrl: 'app/sections/shop/shop.view.html'
       };
+      let thanks = {
+        controller: 'ThanksController',
+        controllerAs: 'thanksVM',
+        templateUrl: 'app/sections/thanks/thanks.view.html'
+      };
+      let favorites = {
+        controller: 'FavoritesController',
+        controllerAs: 'favoritesVM',
+        templateUrl: 'app/sections/favorites/favorites.view.html'
+      };
 
       $routeProvider
       .when('/', home)
@@ -38,6 +48,8 @@ angular.module('elBaratonApp')
       .when('/categories/', categories)
       .when('/categories/:id', categories)
       .when('/shop', shop)
+      .when('/thanks', thanks)
+      .when('/favorites', favorites)
       .otherwise({
         redirectTo: '/'
       });

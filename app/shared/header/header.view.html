@@ -1,16 +1,16 @@
 <header class="py-3" ng-controller="HeaderController as headerVM">
   <div class="row flex-nowrap justify-content-between align-items-center">
     <div class="col-4 pt-1">
-      <a class="btn btn-outline-primary" href="#"" data-toggle="modal" data-target="#subscribeModal">Suscríbase</a>
+      <a class="btn btn-outline-primary" href="javascript:void(0)" data-toggle="modal" data-target="#subscribeModal">Suscríbase</a>
     </div>
     <div class="col-4 text-center">
-      <a class="header__logo" href="#">El Baratón</a>
+      <a class="header__logo" href="javascript:void(0)">El Baratón</a>
     </div>
     <div class="nav-user-items col-4 d-flex justify-content-end align-items-center">
       <div class="text-muted nav-item ml-1" ng-controller="FavoritesController as favoritesVM">
         <i ng-click="favoritesVM.getProductsFromLS()" class="far fa-heart" id="dropdownMenuFavorites" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
         <div class="dropdown-menu cart-dropdown-menu" aria-labelledby="dropdownMenuFavorites">
-          <a ng-repeat="product in favoritesVM.products_favorites" class="dropdown-item" href="#">{{product.name}}</a>
+          <a ng-repeat="product in favoritesVM.products_favorites" class="dropdown-item" href="javascript:void(0)">{{product.name}}</a>
           <div ng-if="!favoritesVM.products_favorites.length" class="dropdown-item">Huy, no hay nada, agrega alguito! <code><3</code> </div>
           <div class="dropdown-divider" ng-if="favoritesVM.products_favorites.length"></div>
           <a ng-click="favoritesVM.cleanLocalStorageFavorites()" ng-if="favoritesVM.products_favorites.length" class="dropdown-item text-center text-danger d-flex justify-content-between" href="javascript:void(0)"> Borrar Favoritos <i class="far fa-trash-alt"></i> </a>
@@ -19,7 +19,7 @@
       <div class="text-muted nav-item ml-1" ng-controller="CartController as cartVM">
         <i ng-click="cartVM.getProductsFromLS()" class="fab fa-opencart" id="dropdownMenuCart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
         <div class="dropdown-menu cart-dropdown-menu" aria-labelledby="dropdownMenuCart">
-          <a ng-repeat="product in cartVM.products_cart" class="dropdown-item" href="#">{{product.name}}</a>
+          <a ng-repeat="product in cartVM.products_cart" class="dropdown-item" href="javascript:void(0)">{{product.name}}</a>
           <div ng-if="!cartVM.products_cart.length" class="dropdown-item">Huy, no hay nada, compra alguito! <span class="text-success">=)</span></div>
           <div class="dropdown-divider" ng-if="cartVM.products_cart.length"></div>
           <a ng-click="cartVM.cleanLocalStorageCart()" ng-if="cartVM.products_cart.length" class="dropdown-item text-center text-danger d-flex justify-content-between" href="javascript:void(0)"> Vaciar Canasta <i class="far fa-trash-alt"></i> </a>
