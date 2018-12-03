@@ -28,6 +28,7 @@ angular
     productsVM.greaterThan = greaterThan;
     productsVM.clearFilters = clearFilters;
     productsVM.goToUrl = goToUrl;
+    productsVM.isFavorite = isFavorite;
     
     function getLocalStorageInformationCart() {
       let products_on_cart_ls;
@@ -118,6 +119,12 @@ angular
 
     function goToUrl(url) {
       $location.url(url);
+    }
+
+    function isFavorite(product) {
+      let is_favorite = false;
+      is_favorite = localStorageService.checkIfProductIsFavorite(product);
+      return is_favorite;
     }
 
     (function init() {

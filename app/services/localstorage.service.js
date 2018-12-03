@@ -19,7 +19,8 @@ function dataService($http, $log) {
       'addProductToFavorites': addProductToFavorites,
       'cleanCart': cleanCart,
       'cleanFavorites': cleanFavorites,
-      'removeIndividualProduct': removeIndividualProduct
+      'removeIndividualProduct': removeIndividualProduct,
+      'checkIfProductIsFavorite': checkIfProductIsFavorite
     };
     function getCartProducts() {
       return getLocalStorage('products_on_cart_ls');
@@ -41,6 +42,10 @@ function dataService($http, $log) {
     }
     function removeIndividualProduct(products_on_cart_ls) {
       setLocalStorage('products_on_cart_ls', products_on_cart_ls);
+    }
+    function checkIfProductIsFavorite(product) {
+      let favorite_products = getFavoritesProducts();
+      return favorite_products.has(product.id);
     }
 
     // Functions
