@@ -80,7 +80,7 @@ angular
     }
 
     function addToFavorites(product) {
-      let products_on_favorites_ls = productsVM.getLocalStorageInformationCart();
+      let products_on_favorites_ls = productsVM.getLocalStorageInformationFavorites();
       products_on_favorites_ls.set(product.id, product);
       localStorageService.addProductToFavorites(products_on_favorites_ls);
     }
