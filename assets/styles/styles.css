@@ -14,6 +14,7 @@
 header {
   border-bottom: 1px solid #e5e5e5;
   line-height: 1;
+  margin-bottom: 10px;
 }
 .header__logo {
   color: var(--brand);
@@ -59,7 +60,7 @@ header .nav-user-items a.nav-item { color: #ffffff; }
 /* >>> Categories Nav <<< */
 .categories-nav {
   flex-wrap: nowrap;
-  overflow-x: scroll;
+  /* overflow-x: auto; */
   white-space: nowrap;
 }
 /* >>> Products <<< */
