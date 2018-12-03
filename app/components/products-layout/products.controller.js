@@ -32,7 +32,7 @@ angular
     function getLocalStorageInformationCart() {
       let products_on_cart_ls;
       if ( localStorageService.getCartProducts() === null ) {
-        products_on_cart_ls = [];
+        products_on_cart_ls = new Map();
       } else {
         products_on_cart_ls = localStorageService.getCartProducts();
       }
@@ -42,7 +42,7 @@ angular
     function getLocalStorageInformationFavorites() {
       let products_on_favorites_ls;
       if ( localStorageService.getFavoritesProducts() === null ) {
-        products_on_favorites_ls = [];
+        products_on_favorites_ls = new Map();
       } else {
         products_on_favorites_ls = localStorageService.getFavoritesProducts();
       }
@@ -79,18 +79,15 @@ angular
       productsVM.search_box = '';
     }
 
-    function addToFavorites($event, product) {
-      $event.target.parentElement.classList.toggle('is-favorite');
-      let products_on_favorites_ls;
-      products_on_favorites_ls = productsVM.getLocalStorageInformationFavorites();
-      products_on_favorites_ls.push(product);
+    function addToFavorites(product) {
+      let products_on_favorites_ls = productsVM.getLocalStorageInformationCart();
+      products_on_favorites_ls.set(product.id, product);
       localStorageService.addProductToFavorites(products_on_favorites_ls);
     }
 
-    function addToCart($event, product) {
-      let products_on_cart_ls;
-      products_on_cart_ls = productsVM.getLocalStorageInformationCart();
-      products_on_cart_ls.push(product);
+    function addToCart(product) {
+      let products_on_cart_ls = productsVM.getLocalStorageInformationCart();
+      products_on_cart_ls.set(product.id, product);
       localStorageService.addProductToCart(products_on_cart_ls);
     }
 

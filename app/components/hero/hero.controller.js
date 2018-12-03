@@ -15,7 +15,7 @@ angular
     function getLocalStorageInformationCart() {
       let products_on_cart_ls;
       if ( localStorageService.getCartProducts() === null ) {
-        products_on_cart_ls = [];
+        products_on_cart_ls = new Map();
       } else {
         products_on_cart_ls = localStorageService.getCartProducts();
       }
@@ -27,9 +27,8 @@ angular
       });
     }
     function addToCart(product) {
-      let products_on_cart_ls;
-      products_on_cart_ls = heroVM.getLocalStorageInformationCart();
-      products_on_cart_ls.push(product);
+      let products_on_cart_ls = heroVM.getLocalStorageInformationCart();
+      products_on_cart_ls.set(product.id, product);
       localStorageService.addProductToCart(products_on_cart_ls);
     }
 

@@ -10,20 +10,23 @@
       <div class="text-muted nav-item ml-1" ng-controller="FavoritesMenuController as favoritesMenuVM">
         <i ng-click="favoritesMenuVM.getProductsFromLS()" class="far fa-heart" id="dropdownMenuFavorites" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
         <div class="dropdown-menu cart-dropdown-menu" aria-labelledby="dropdownMenuFavorites">
-          <a ng-repeat="product in favoritesMenuVM.products_favorites" class="dropdown-item" href="javascript:void(0)">{{product.name}}</a>
-          <div ng-if="!favoritesMenuVM.products_favorites.length" class="dropdown-item">Huy, no hay nada, agrega alguito! <code><3</code> </div>
-          <div class="dropdown-divider" ng-if="favoritesMenuVM.products_favorites.length"></div>
-          <a ng-click="favoritesMenuVM.cleanLocalStorageFavorites()" ng-if="favoritesMenuVM.products_favorites.length" class="dropdown-item text-center text-danger d-flex justify-content-between" href="javascript:void(0)"> Borrar Favoritos <i class="far fa-trash-alt"></i> </a>
+          <a ng-repeat="product in favoritesMenuVM.products_favorites | fromMap" class="dropdown-item d-flex justify-content-between" href="javascript:void(0)">
+            {{product.name}}
+            <span class="text-success ml-2"><i class="fas fa-shopping-basket"></i></span>
+          </a>
+          <div ng-if="!favoritesMenuVM.products_favorites.size" class="dropdown-item">Huy, no hay nada, agrega alguito! <code><3</code> </div>
+          <div class="dropdown-divider" ng-if="favoritesMenuVM.products_favorites.size"></div>
+          <a ng-click="favoritesMenuVM.cleanLocalStorageFavorites()" ng-if="favoritesMenuVM.products_favorites.size" class="dropdown-item text-center text-danger d-flex justify-content-between" href="javascript:void(0)"> Borrar Favoritos <i class="far fa-trash-alt"></i> </a>
         </div>
       </div>
       <div class="text-muted nav-item ml-1" ng-controller="CartController as cartVM">
         <i ng-click="cartVM.getProductsFromLS()" class="fab fa-opencart" id="dropdownMenuCart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
         <div class="dropdown-menu cart-dropdown-menu" aria-labelledby="dropdownMenuCart">
-          <a ng-repeat="product in cartVM.products_cart" class="dropdown-item" href="javascript:void(0)">{{product.name}}</a>
-          <div ng-if="!cartVM.products_cart.length" class="dropdown-item">Huy, no hay nada, compra alguito! <span class="text-success">=)</span></div>
-          <div class="dropdown-divider" ng-if="cartVM.products_cart.length"></div>
-          <a ng-click="cartVM.cleanLocalStorageCart()" ng-if="cartVM.products_cart.length" class="dropdown-item text-center text-danger d-flex justify-content-between" href="javascript:void(0)"> Vaciar Canasta <i class="far fa-trash-alt"></i> </a>
-          <a ng-click="cartVM.goToCartPage()" ng-if="cartVM.products_cart.length" class="dropdown-item text-center text-success d-flex justify-content-between" href="javascript:void(0)"> Ir a Pagar <i class="fas fa-dollar-sign"></i> </a>
+          <a ng-repeat="(key, product) in cartVM.products_cart | fromMap" class="dropdown-item" href="javascript:void(0)">{{product.name}}</a>
+          <div ng-if="!cartVM.products_cart.size" class="dropdown-item">Huy, no hay nada, compra alguito! <span class="text-success">=)</span></div>
+          <div class="dropdown-divider" ng-if="cartVM.products_cart.size"></div>
+          <a ng-click="cartVM.cleanLocalStorageCart()" ng-if="cartVM.products_cart.size" class="dropdown-item text-center text-danger d-flex justify-content-between" href="javascript:void(0)"> Vaciar Canasta <i class="far fa-trash-alt"></i> </a>
+          <a ng-click="cartVM.goToCartPage()" ng-if="cartVM.products_cart.size" class="dropdown-item text-center text-success d-flex justify-content-between" href="javascript:void(0)"> Ir a Pagar <i class="fas fa-dollar-sign"></i> </a>
         </div>
       </div>
       <a class="nav-item text-muted" href="/index.html?#!/login"><i class="fas fa-user-astronaut"></i></a>

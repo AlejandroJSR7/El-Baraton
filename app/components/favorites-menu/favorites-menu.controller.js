@@ -15,7 +15,7 @@ angular
     function getLocalStorageInformation() {
       let products_on_favorites_ls;
       if ( localStorageService.getFavoritesProducts() === null ) {
-        products_on_favorites_ls = [];
+        products_on_favorites_ls = new Map();
       } else {
         products_on_favorites_ls = localStorageService.getFavoritesProducts();
       }

@@ -16,7 +16,7 @@ angular
     function getLocalStorageInformation() {
       let products_on_cart_ls;
       if ( localStorageService.getCartProducts() === null ) {
-        products_on_cart_ls = [];
+        products_on_cart_ls = new Map();
       } else {
         products_on_cart_ls = localStorageService.getCartProducts();
       }
@@ -37,6 +37,5 @@ angular
 
     (function init() {
       document.addEventListener('DOMContentLoaded', getProductsFromLS);
-      cartVM.getProductsFromLS();
     })();
   }

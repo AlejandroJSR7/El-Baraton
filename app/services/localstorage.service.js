@@ -13,7 +13,6 @@ function dataService($http, $log) {
     // products_on_favorites_ls
 
     const data = {
-      'getToken': getToken,
       'getCartProducts': getCartProducts,
       'addProductToCart': addProductToCart,
       'getFavoritesProducts': getFavoritesProducts,
@@ -23,22 +22,22 @@ function dataService($http, $log) {
       'removeIndividualProduct': removeIndividualProduct
     };
     function getCartProducts() {
-      return getToken('products_on_cart_ls');
+      return getLocalStorage('products_on_cart_ls');
     }
     function addProductToCart(products_on_cart_ls) {
       setLocalStorage('products_on_cart_ls', products_on_cart_ls);
     }
     function getFavoritesProducts() {
-      return getToken('products_on_favorites_ls');
+      return getLocalStorage('products_on_favorites_ls');
     }
     function addProductToFavorites(products_on_favorites_ls) {
       setLocalStorage('products_on_favorites_ls', products_on_favorites_ls);
     }
     function cleanCart() {
-      cleanLS('products_on_cart_ls');
+      cleanLocalStorage('products_on_cart_ls');
     }
     function cleanFavorites() {
-      cleanLS('products_on_favorites_ls');
+      cleanLocalStorage('products_on_favorites_ls');
     }
     function removeIndividualProduct(products_on_cart_ls) {
       setLocalStorage('products_on_cart_ls', products_on_cart_ls);
@@ -46,17 +45,20 @@ function dataService($http, $log) {
 
     // Functions
 
-    function getToken(key) {
-      return getLocalStorage(key);
-    }
     function setLocalStorage(key, value) {
-      localStorage.setItem(key, JSON.stringify(value));
+      localStorage.setItem(key, mapToJson(value));
     }
     function getLocalStorage(key) {
-      return JSON.parse(localStorage.getItem(key));
+      return jsonToMap(localStorage.getItem(key));
     }
-    function cleanLS(key) {
+    function cleanLocalStorage(key) {
       return localStorage.clear(key);
+    }
+    function mapToJson(map) {
+      return JSON.stringify([...map]);
+    }
+    function jsonToMap(jsonStr) {
+      return new Map(JSON.parse(jsonStr));
     }
 
     return data;

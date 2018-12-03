@@ -14,7 +14,7 @@ angular
     shopVM.getLocalStorageInformation = getLocalStorageInformation;
     shopVM.getProductsFromLS = getProductsFromLS;
     shopVM.cleanLocalStorageCart = cleanLocalStorageCart;
-    shopVM.goToThanksPage = goToThanksPage;
+    shopVM.goToPage = goToPage;
     shopVM.randomDiscount = randomDiscount;
     shopVM.changeTotalPrice = changeTotalPrice;
     shopVM.removeIndividualProductFromLS = removeIndividualProductFromLS;
@@ -32,15 +32,15 @@ angular
 
     function getProductsFromLS() {
       shopVM.products_cart = localStorageService.getCartProducts();
-      // shopVM.changeTotalPrice();
+      shopVM.changeTotalPrice();
     }
 
     function cleanLocalStorageCart() {
       localStorageService.cleanCart();
     }
 
-    function goToThanksPage() {
-      $location.url('/thanks');
+    function goToPage(path_url) {
+      $location.url(path_url);
     }
 
     function randomDiscount() {
@@ -48,32 +48,25 @@ angular
     }
 
     function changeTotalPrice() {
-      // if (shopVM.products_cart.length > 0) {
-      //   for (let product_shop of shopVM.products_cart) {
-      //     shopVM.total_products_price += parseFloat(product_shop.price);
-      //   }
-      // }
+      if (shopVM.products_cart.size) {
+        shopVM.products_cart.forEach((product_shop, key) => {
+          shopVM.total_products_price += parseFloat(product_shop.price);
+        });
+      }
     }
 
     function removeIndividualProductFromLS($event, shop_product) {
       $event.preventDefault();
-      let shop_product_id = shop_product.id;
-      $event.target.parentElement.remove()
-      let list_of_products_on_cart;
-      getProductsFromLS();
-      list_of_products_on_cart = shopVM.products_cart;
-      list_of_products_on_cart.forEach((productLS, index) => {
-        if (productLS.id === shop_product_id) {
-          list_of_products_on_cart.splice(list_of_products_on_cart[index], 1);
-        }
-      });
-      localStorageService.removeIndividualProduct(list_of_products_on_cart);
+      
+      shopVM.products_cart.delete(shop_product.id);
+      localStorageService.removeIndividualProduct(shopVM.products_cart);
+
       shopVM.changeTotalPrice();
     }
 
     function buy() {
       localStorageService.cleanCart();
-      shopVM.goToThanksPage();
+      shopVM.goToPage('/thanks');
     }
 
     (function init() {
