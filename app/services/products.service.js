@@ -5,7 +5,7 @@
  */
 angular
   .module('elBaratonApp')
-  .constant('BASE_URL', './data/')
+  .constant('BASE_URL', './app/data/')
   .constant('PRODUCTS_API', 'products.json')
   .factory('ProductsService', dataService);
 
